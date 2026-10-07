@@ -11,6 +11,8 @@
   const BOUNCE = 0.72;
   const FRICTION = 0.995;
   const FLOOR_FRICTION = 0.92;
+  // 床の下に「下にスクロール」の表示スペースを空ける
+  const FLOOR_MARGIN = 96;
 
   const COLORS = [
     { base: "#ff4d9a", light: "#ffb3d4" },
@@ -173,6 +175,28 @@
     return Math.max(min, Math.min(max, v));
   }
 
+  function floorY() {
+    return height - FLOOR_MARGIN;
+  }
+
+  function drawFloor() {
+    const y = floorY();
+    const grad = ctx.createLinearGradient(0, 0, width, 0);
+    grad.addColorStop(0, "rgba(255, 77, 154, 0)");
+    grad.addColorStop(0.5, "rgba(255, 77, 154, 0.6)");
+    grad.addColorStop(1, "rgba(255, 77, 154, 0)");
+    ctx.save();
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1;
+    ctx.shadowColor = "#ff4d9a";
+    ctx.shadowBlur = 8;
+    ctx.beginPath();
+    ctx.moveTo(0, y + 0.5);
+    ctx.lineTo(width, y + 0.5);
+    ctx.stroke();
+    ctx.restore();
+  }
+
   function update() {
     // 止まってから離したときに飛んでいかないよう、ポインタ速度を減衰させる
     pointer.vx *= 0.8;
@@ -194,8 +218,8 @@
       }
 
       // 床
-      if (b.y + b.r > height) {
-        b.y = height - b.r;
+      if (b.y + b.r > floorY()) {
+        b.y = floorY() - b.r;
         if (b.vy > 2) b.squash = Math.min(0.35, b.vy * 0.025);
         b.vy *= -BOUNCE;
         b.vx *= FLOOR_FRICTION;
@@ -395,6 +419,7 @@
     if (!running) return;
     update();
     ctx.clearRect(0, 0, width, height);
+    drawFloor();
     for (const b of balls) drawBall(b);
     requestAnimationFrame(frame);
   }
