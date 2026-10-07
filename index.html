@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小口 悠 | 株式会社STELAQ ソフトウェアエンジニア</title>
+    <meta name="description" content="株式会社STELAQ ソフトウェアエンジニアリング事業部に在籍する小口 悠のウェブページです。" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="#top"><span class="prompt">~/</span>haruka.oguchi</a>
+      <nav class="nav">
+        <a href="#news">News</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- トップ画面: ボール状キャラクター -->
+      <section class="hero">
+        <canvas id="ball-canvas" aria-label="マウスで遊べるボールのキャラクター"></canvas>
+        <div class="hero-content">
+          <p class="hero-kicker"><span class="prompt">$</span> whoami</p>
+          <h1 class="hero-name">
+            小口 悠
+            <span class="hero-name-en">Haruka Oguchi</span>
+          </h1>
+          <p class="hero-role">Software Engineer @ STELAQ</p>
+          <p class="hero-hint">ボールをなでたり、つかんで投げたりしてみてください</p>
+        </div>
+      </section>
+
+      <!-- ニュースフィード -->
+      <section id="news" class="section">
+        <h2 class="section-title"><span class="section-index">01</span>News</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <time datetime="2026-10-07">2026-10-07</time>
+            <span class="news-tag">INFO</span>
+            <p>ウェブページ作成</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- スキルリスト -->
+      <section id="skills" class="section">
+        <h2 class="section-title"><span class="section-index">02</span>Skills</h2>
+
+        <dl class="skill-list">
+          <div class="skill-row">
+            <dt>OS</dt>
+            <dd>
+              <ul class="chips">
+                <li>Windows</li><li>Ubuntu</li><li>iOS</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt>言語</dt>
+            <dd>
+              <ul class="chips">
+                <li>C++</li><li>Python</li><li>TypeScript</li><li>Swift</li><li>JavaScript</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt>DB</dt>
+            <dd>
+              <ul class="chips">
+                <li>PostgreSQL</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt>ツール / その他</dt>
+            <dd>
+              <ul class="chips">
+                <li>Qt Creator</li><li>Visual Studio</li><li>Visual Studio Code</li><li>PyCharm</li>
+                <li>Eclipse</li><li>Django (Python)</li><li>React</li><li>AWS</li><li>Git</li>
+                <li>SVN</li><li>CI/CD (Jenkins)</li><li>GitLab</li><li>Jira (Atlassian)</li>
+                <li>Tera Term</li><li>nginx</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="skill-row">
+            <dt>保有資格</dt>
+            <dd>
+              <ul class="cert-list">
+                <li>TOEIC 640</li>
+                <li>基本情報技術者試験（FE）</li>
+                <li>Python3 エンジニア認定試験</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="sub-title">工程</h3>
+        <div class="process-wrap">
+          <table class="process-table">
+            <thead>
+              <tr>
+                <th scope="col">企画提案</th>
+                <th scope="col">調査分析</th>
+                <th scope="col">要件定義</th>
+                <th scope="col">基本設計</th>
+                <th scope="col">詳細設計</th>
+                <th scope="col">実装</th>
+                <th scope="col">単体試験</th>
+                <th scope="col">結合試験</th>
+                <th scope="col">総合試験</th>
+                <th scope="col">受入試験</th>
+                <th scope="col">運用保守</th>
+                <th scope="col">PL・PM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td class="lv-4">★</td>
+                <td class="lv-1">○</td>
+                <td class="lv-4">★</td>
+                <td class="lv-4">★</td>
+                <td class="lv-4">★</td>
+                <td class="lv-4">★</td>
+                <td class="lv-1">○</td>
+                <td></td>
+                <td></td>
+                <td class="lv-1">○</td>
+                <td class="lv-1">○</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="legend">
+          <span><span class="lv-4">★</span> 10年以上</span>
+          <span><span class="lv-3">●</span> 5年以上</span>
+          <span><span class="lv-2">◎</span> 3年以上</span>
+          <span><span class="lv-1">○</span> 3年未満</span>
+        </p>
+      </section>
+
+      <!-- 自己紹介 -->
+      <section id="about" class="section">
+        <h2 class="section-title"><span class="section-index">03</span>About</h2>
+        <div class="profile-card">
+          <p class="profile-name">小口 悠 <span>Haruka Oguchi</span></p>
+          <dl class="profile-list">
+            <div><dt>所属</dt><dd>株式会社STELAQ<br />ソフトウェアエンジニアリング事業部<br />開発第３課 第４チーム</dd></div>
+            <div><dt>役職</dt><dd>チーム長</dd></div>
+            <div><dt>学位</dt><dd>博士（理学）</dd></div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Haruka Oguchi / STELAQ Co., Ltd.</p>
+    </footer>
+
+    <script src="js/balls.js"></script>
+  </body>
+</html>
