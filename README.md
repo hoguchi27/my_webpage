@@ -43,22 +43,7 @@ my_webpage/
 
 ## ローカルでの実行方法
 
-ビルドやパッケージのインストールは不要です。以下のいずれかの方法で表示できます。
-
-### 方法1: ファイルを直接開く（いちばん簡単）
-
-`public/index.html` をブラウザで開きます。
-
-WSL（Ubuntu）上にある場合は、ターミナルで次を実行すると Windows 側の既定ブラウザで開きます。
-
-```bash
-cd ~/work/my_webpage
-explorer.exe public/index.html
-```
-
-### 方法2: ローカルサーバーで開く（おすすめ）
-
-実際の公開環境に近い形で確認できます。Python 3 が入っていれば追加のインストールは不要です。
+ローカルサーバーを起動して確認します。ビルドは不要で、Python 3 が入っていれば追加のインストールも不要です。
 
 ```bash
 cd ~/work/my_webpage
@@ -69,16 +54,6 @@ python3 -m http.server 8000 -d public
 終了するときはターミナルで `Ctrl + C` を押します。
 
 ポート 8000 が使用中の場合は、`python3 -m http.server 8080 -d public` のように別の番号を指定してください。
-
-### 方法3: VS Code の拡張機能を使う
-
-VS Code に拡張機能「Live Server」をインストールし、`public/index.html` を開いた状態で右下の「Go Live」をクリックします。
-ファイルを保存するたびにブラウザが自動で再読み込みされるので、編集しながら確認するときに便利です。
-
-### 補足
-
-- フォント（Google Fonts）はインターネットから読み込みます。オフラインでも表示はできますが、フォントは代替フォントになります。
-- 変更が反映されない場合は、ブラウザで `Ctrl + Shift + R`（強制再読み込み）を試してください。
 
 ## 公開（Cloudflare Workers へのデプロイ）
 
@@ -106,18 +81,6 @@ GitHub リポジトリ（private）と Cloudflare Workers を連携し、`master
 `master` ブランチに push するだけで自動的にデプロイされます。
 デプロイの状況やログは、ダッシュボードの **Workers & Pages** → `my-webpage` → **Deployments** で確認できます。
 
-### 独自ドメインを使う場合
-
-Cloudflare にドメインを登録したうえで、`my-webpage` の **Settings** → **Domains & Routes** → **Add** → **Custom domain** から設定します。
-
-## 更新方法
-
-- **ニュースの追加**: `public/index.html` の `news-list` に `<li class="news-item">` を先頭に追加する
-- **スキルの追加**: `public/index.html` の `skill-list` 内の該当行に `<li>` を追加する
-- **工程の経験年数**: `process-table` のセルの記号とクラスを変更する
-  （`lv-4` ★ 10年以上 / `lv-3` ● 5年以上 / `lv-2` ◎ 3年以上 / `lv-1` ○ 3年未満）
-- 編集後は `master` ブランチに push すると公開サイトに反映されます
-- **キャラクターのセリフ**: `public/js/balls.js` の `MESSAGES` を編集する
 
 ## 更新履歴
 
@@ -125,6 +88,7 @@ Cloudflare にドメインを登録したうえで、`my-webpage` の **Settings
 
 ### 2026-10-07
 
+- README.md のローカルでの実行方法をローカルサーバーで開く方法のみに整理
 - トップ画面の下部に「下にスクロール」の案内を追加
   - クリックすると News セクションへ移動する
   - 案内とキャラクターが重ならないよう、キャラクターが着地する床の位置を上げた
