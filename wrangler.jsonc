@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers の名前（ダッシュボードのプロジェクト名と一致させる）
+  "name": "my-webpage",
+  "compatibility_date": "2026-10-07",
+  // public/ 以下を静的ファイルとして配信する（README.md などは公開しない）
+  "assets": {
+    "directory": "./public"
+  }
+}
